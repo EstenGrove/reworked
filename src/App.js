@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import { StateProvider, ActiveProvider } from "./state/StateContext";
+import Main from "./Main";
+import CalendarContainer from "./components/CalendarContainer";
+import Calendar from "./components/Calendar";
+import Week from "./components/Week";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StateProvider>
+      <div className="App">
+        <ActiveProvider>
+          <Main>
+            <CalendarContainer>
+              <Calendar>
+                <Week />
+              </Calendar>
+            </CalendarContainer>
+          </Main>
+        </ActiveProvider>
+      </div>
+    </StateProvider>
   );
 }
 

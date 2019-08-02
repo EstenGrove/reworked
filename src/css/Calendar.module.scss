@@ -1,0 +1,16 @@
+@import "../sass/variables";
+
+.Calendar {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  border-bottom: none;
+  -webkit-box-shadow: $light_shadow;
+  box-shadow: $light_shadow;
+}
+
+@media screen and (min-width: 1440px) {
+  .Calendar {
+  }
+}

@@ -1,0 +1,23 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+.BasicButton {
+  background-color: #111;
+  font-weight: 600;
+  font-family: $primary_font;
+  -webkit-box-shadow: $light_shadow;
+  box-shadow: $light_shadow;
+  @include rounded;
+}
+
+@media screen and (max-width: 500px) {
+  .BasicButton {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .BasicButton {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
+}

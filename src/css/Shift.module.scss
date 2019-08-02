@@ -1,0 +1,50 @@
+// Statuses
+.COMPLETE {
+  background-color: #44f0b5;
+}
+.PENDING {
+  background-color: #ff957d;
+}
+
+.INCOMPLETE {
+  background-color: #eaecef;
+}
+.MISSED-EVENT {
+  background-color: #d7263d;
+}
+
+.IN-PROGRESS {
+  background-color: #f9f871;
+}
+
+.Shift {
+  width: 100%;
+  height: calc(7rem / 3.5);
+  margin-bottom: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: #a5a2a9;
+  text-align: center;
+  background-color: #eaecef;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 1;
+
+  &:nth-child(odd) {
+    padding-top: 0.4rem;
+  }
+  &:nth-child(even) {
+    border: 1px solid #eaecef;
+    border-left: none;
+    border-right: none;
+    padding-top: 0.7rem;
+    height: 3rem;
+  }
+  // gets darker on hover
+  &:hover {
+    cursor: pointer;
+    background-color: #d3d4d7;
+  }
+}

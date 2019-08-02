@@ -1,0 +1,27 @@
+.DropdownWrapper {
+  width: auto;
+  height: 3rem;
+  margin-bottom: 4rem;
+
+  &_label {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  &_input {
+    width: 25rem;
+    height: 3rem;
+    padding-left: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    outline: none;
+    border: 1px solid #5c75ea;
+
+    &::-webkit-input-placeholder,
+    &:-ms-input-placeholder,
+    &::-ms-input-placeholder,
+    &::-webkit-input-placeholder {
+      opacity: 0.4;
+      font-weight: 200;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.CalendarContainer {
+  width: 100%;
+  min-height: 100%;
+  padding: 1rem 10rem;
+}
+
+@media screen and (max-width: 950px) {
+  .CalendarContainer {
+    padding: 1rem 5rem;
+  }
+}

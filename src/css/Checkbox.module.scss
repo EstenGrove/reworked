@@ -1,0 +1,44 @@
+@import "../sass/mixins";
+
+.FancyCheckboxWrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  @include flex_vertical_center;
+
+  &_label {
+    margin-left: 1rem;
+    font-size: 1.7rem;
+
+    &::before {
+      width: 1.7rem;
+      height: 1.7rem;
+      position: absolute;
+      display: block;
+      content: "";
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #777;
+      border-radius: 0.5rem;
+    }
+
+    &::after {
+      position: absolute;
+      display: none;
+      content: "✔";
+      font-size: 1.2rem;
+      top: 0;
+      left: 0.3rem;
+      color: #61e294;
+    }
+  }
+}
+// hide the default checkbox input
+input[type="checkbox"] {
+  visibility: hidden;
+  position: relative;
+}
+
+input[type="checkbox"]:checked + .FancyCheckboxWrapper_label::after {
+  display: block;
+}
