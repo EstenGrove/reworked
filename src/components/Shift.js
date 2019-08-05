@@ -17,7 +17,7 @@ const Shift = ({ status, shift, day, ADL, openModal, id }) => {
       data-shift={shift}
       key={id}
     >
-      {shift}
+      {shift || ""}
     </span>
   );
 };

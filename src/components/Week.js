@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import styles from "../css/Week.module.scss";
+import { useFormController } from "../utils/useFormController";
 import { StateContext, ActiveContext } from "../state/StateContext";
 import ADL from "./ADL";
 import Sunday from "./days/Sunday";
@@ -9,12 +10,20 @@ import Wednesday from "./days/Wednesday.js";
 import Thursday from "./days/Thursday.js";
 import Friday from "./days/Friday.js";
 import Saturday from "./days/Saturday";
-import Shift from "./Shift";
+import OtherTasksSection from "./OtherTasksSection";
+import Modal from "./Modal";
+import Dropdown from "./Dropdown";
+import TextInput from "./TextInput";
+import Textarea from "./Textarea";
+import Checkbox from "./Checkbox";
+import StatefulButton from "./StatefulButton";
 
 const Week = () => {
   const { state, dispatch } = useContext(StateContext);
   const { active, setActive } = useContext(ActiveContext);
   const [isOpen, setIsOpen] = useState(false);
+  const formRef = useRef();
+  const { handleChange, handleCheckbox, handleSubmit } = useFormController();
 
   // handles opening the modal
   const modalHandler = (e, shift) => {
@@ -23,17 +32,8 @@ const Week = () => {
     return setIsOpen(!isOpen);
   };
 
-  const findDaBullShit = (condition, el) => {
-    const shit = state.filter(
-      (item, index) =>
-        item.day === "Sat" && item.shift === "A" && item.adl === "Laundry"
-    );
-
-    if (condition) {
-      return el;
-    }
-
-    state.findIndex();
+  const submitHandler = e => {
+    console.log("Submitted!");
   };
 
   console.log(
@@ -56,6 +56,58 @@ const Week = () => {
         <Sunday originalTasks={state} modalHandler={modalHandler} />
       </div>
       <hr style={{ marginTop: "3rem", opacity: ".6" }} />
+      <OtherTasksSection />
+
+      {/* MODAL COMPONENT */}
+      <Modal isOpen={isOpen} handleClose={modalHandler}>
+        <form onSubmit={handleSubmit} ref={formRef}>
+          <Dropdown
+            htmlFor="task-status"
+            id="task-status"
+            name="STATUS"
+            label="Choose a status:"
+            options={[
+              "PENDING",
+              "COMPLETE",
+              "MISSED-EVENT",
+              "NOT-COMPLETE",
+              "IN-PROGRESS"
+            ]}
+            handleChange={handleChange}
+          />
+          <TextInput
+            name="SIGNATURE"
+            label="Sign your name:"
+            required={true}
+            handleChange={handleChange}
+          />
+          <Checkbox
+            label="Re-assess"
+            name="REASSESS"
+            id="reassess"
+            handleCheckbox={handleCheckbox}
+            margins="2rem 0"
+          />
+          <Textarea
+            name="TaskStatus_notes"
+            label="Notes/Description"
+            placeholder="Notes..."
+            handleChange={handleChange}
+            wrap="soft"
+            minLength={0}
+            maxLength={250}
+            required={true}
+          />
+
+          <StatefulButton
+            margins="2rem 0"
+            bgcolor="hsl(222, 49%, 64%)"
+            text="Save"
+            action="Saving..."
+            callback={e => submitHandler(e)}
+          />
+        </form>
+      </Modal>
     </>
   );
 };

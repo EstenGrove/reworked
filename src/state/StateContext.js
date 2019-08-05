@@ -44,6 +44,19 @@ const stateReducer = (state, action) => {
         item.id === action.id ? (item.name = val) : item
       );
       return [...dup5];
+    case "FETCH_TASKS":
+      const fetchTasks = async ({ mo = new Date(), url, headers = null }) => {
+        try {
+          const req = await fetch(url, headers);
+          const res = req.json();
+          state = res;
+          return state;
+        } catch (err) {
+          state = err;
+          return state;
+        }
+      };
+      return fetchTasks();
     default:
       break;
   }

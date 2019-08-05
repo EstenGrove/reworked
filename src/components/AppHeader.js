@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../css/AppHeader.module.scss";
 import { default as sprite } from "../assets/all.svg";
 
+// Contains the "Help" Question Mark Icon
+
 const AppHeader = () => {
   return (
     <div className={styles.AppHeader}>

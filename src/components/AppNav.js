@@ -25,9 +25,9 @@ const AppNav = ({ activeUser }) => {
           <svg
             className={styles.Nav_list_item_logout}
             style={{
-              width: "2rem",
-              height: "2rem",
-              marginTop: ".5rem",
+              width: "1.6rem",
+              height: "1.6rem",
+              marginTop: ".6rem",
               opacity: ".4"
             }}
           >

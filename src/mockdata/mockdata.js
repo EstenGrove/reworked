@@ -48,7 +48,6 @@ export const mockdata = [
     age: 38,
     residentName: "Copeland Richards",
     date:
-      //  Mon & Grooming Ends above
       "Mon July 01 2019 18:47:43 03:41:34 GMT-0700 (Mountain Standard Time)",
     shift: "N",
     name: "ullamco sint ullamco ea",
@@ -56,7 +55,7 @@ export const mockdata = [
     timestamp: null,
     signature: null
   },
-
+  //  Mon & Grooming Ends above
   {
     id: "5d41da4506272da286fda108",
     day: "Mon",
@@ -107,7 +106,6 @@ export const mockdata = [
     age: 20,
     residentName: "Maryellen Benton",
     date:
-      //   Mon & Bathing ends above
       "Mon July 01 2019 18:47:43 03:41:34 GMT-0700 (Mountain Standard Time)",
     shift: "N",
     name: "dolore elit nostrud officia",
@@ -166,7 +164,6 @@ export const mockdata = [
     age: 20,
     residentName: "Maryellen Benton",
     date:
-      //   Mon & toileting ends above
       "Mon July 01 2019 18:47:43 03:41:34 GMT-0700 (Mountain Standard Time)",
     shift: "N",
     name: "dolore elit nostrud officia",
@@ -175,6 +172,7 @@ export const mockdata = [
     signature: null
   },
 
+  //   Mon & toileting ends above
   {
     id: "5d41da4506272da286fda108",
     day: "Mon",
@@ -1006,8 +1004,8 @@ export const mockdata = [
     signature: null
   },
   {
-    id: "5d41da4553c270828ba49b27",
     day: "Weds",
+    id: "5d41da4553c270828ba49b27",
     adl: "Grooming",
     status: "PENDING",
     guid: "e568ce4f-ddc0-491b-8317-cefa0396185d",
