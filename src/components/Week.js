@@ -59,7 +59,11 @@ const Week = () => {
       <OtherTasksSection />
 
       {/* MODAL COMPONENT */}
-      <Modal isOpen={isOpen} handleClose={modalHandler}>
+      <Modal
+        isOpen={isOpen}
+        handleClose={modalHandler}
+        modalTitle="Task Status"
+      >
         <form onSubmit={handleSubmit} ref={formRef}>
           <Dropdown
             htmlFor="task-status"

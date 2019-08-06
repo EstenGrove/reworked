@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../css/Modal.module.scss";
 
-const Modal = ({ isOpen, handleClose, children }) => {
+const Modal = ({ isOpen, handleClose, children, modalTitle }) => {
   return (
     <div className={isOpen ? `${styles.Modal} ${styles.isOpen}` : styles.Modal}>
       <div className={styles.Modal_top}>
-        <span className={styles.Modal_top_heading}>Task Status</span>
+        <span className={styles.Modal_top_heading}>{modalTitle}</span>
         <h2 onClick={handleClose} className={styles.closeBtn}>
           ×
         </h2>
