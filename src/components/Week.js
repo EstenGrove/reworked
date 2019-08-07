@@ -58,6 +58,12 @@ const Week = () => {
       <hr style={{ marginTop: "3rem", opacity: ".6" }} />
       <OtherTasksSection />
 
+      {/* Other tasks list */}
+      <section className={styles.Week_OtherTasksList}>
+        {/* sdf */}
+        {/* sdfsd */}
+      </section>
+
       {/* MODAL COMPONENT */}
       <Modal
         isOpen={isOpen}
