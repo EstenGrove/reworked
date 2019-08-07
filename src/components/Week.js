@@ -17,6 +17,7 @@ import TextInput from "./TextInput";
 import Textarea from "./Textarea";
 import Checkbox from "./Checkbox";
 import StatefulButton from "./StatefulButton";
+import PlusButton from "./PlusButton";
 
 const Week = () => {
   const { state, dispatch } = useContext(StateContext);
@@ -84,12 +85,14 @@ const Week = () => {
               "IN-PROGRESS"
             ]}
             handleChange={handleChange}
+            placeholder="URGENT, COMPLETE..."
           />
           <TextInput
             name="SIGNATURE"
             label="Sign your name:"
             required={true}
             handleChange={handleChange}
+            placeholder="Sara Forts..."
           />
           <Checkbox
             label="Re-assess"

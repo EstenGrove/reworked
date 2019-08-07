@@ -40,12 +40,7 @@
     &::-ms-input-placeholder,
     &::-webkit-input-placeholder {
       padding-left: 0.1rem;
-    }
-    &::-webkit-input-placeholder,
-    &:-ms-input-placeholder,
-    &::-ms-input-placeholder,
-    &::placeholder {
-      padding-left: 0.1rem;
+      opacity: 0.5;
     }
   }
 }

@@ -1,0 +1,69 @@
+.PlusButton {
+  position: relative;
+
+  &:hover &_tooltip,
+  &:hover &_tooltip_text {
+    display: block;
+    z-index: 2;
+  }
+
+  &_iconBtn {
+    background-color: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  &_icon {
+    width: 2rem;
+    height: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: #00b7ff;
+    fill: #fff;
+  }
+  &_tooltip {
+    display: none;
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    top: -2rem;
+    left: 0;
+    -webkit-clip-path: polygon(
+      0 60%,
+      12% 44%,
+      24% 60%,
+      100% 60%,
+      100% 93%,
+      100% 100%,
+      0 100%
+    );
+    clip-path: polygon(
+      0 60%,
+      12% 44%,
+      24% 60%,
+      100% 60%,
+      100% 93%,
+      100% 100%,
+      0 100%
+    );
+    background-color: #eaecef;
+    border-radius: 0.5rem;
+    z-index: 10;
+    &_text {
+      top: 7.3rem;
+      left: 1.8rem;
+      display: block;
+      position: absolute;
+      color: #111;
+      font-size: 1.3rem;
+      z-index: 20;
+    }
+  }
+}
